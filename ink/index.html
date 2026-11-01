@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Ink Brawl</title>
+<meta name="description" content="Stick-figure duels on a notebook page. Your rival learns how you fight.">
+<meta property="og:title" content="Ink Brawl">
+<meta property="og:description" content="Stick-figure duels. Your rival learns how you fight.">
+<meta name="theme-color" content="#f4ecd8">
+<style>
+  html,body{margin:0;height:100%;position:fixed;inset:0;width:100%;background:#f4ecd8;overflow:hidden;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+  *{touch-action:none;-ms-touch-action:none}
+  canvas{display:block;touch-action:none}
+  #pause{position:fixed;left:62px;bottom:calc(12px + env(safe-area-inset-bottom));width:40px;height:40px;border-radius:20px;border:2px solid #18181d;background:rgba(244,236,216,.85);color:#18181d;font-size:16px;line-height:36px;text-align:center;padding:0;cursor:pointer;touch-action:none}
+  #mute{position:fixed;left:12px;top:auto;bottom:calc(12px + env(safe-area-inset-bottom));width:40px;height:40px;border-radius:20px;border:2px solid #18181d;background:rgba(244,236,216,.85);color:#18181d;font-size:18px;line-height:38px;text-align:center;padding:0;cursor:pointer}
+  #namebox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(244,236,216,.92);z-index:5}
+  #namebox .card{border:3px solid #18181d;border-radius:14px;background:#fffaf0;padding:20px 18px;width:min(86vw,320px);text-align:center;font:900 italic 18px system-ui,sans-serif;color:#18181d;transform:rotate(-1deg)}
+  #namebox input{display:block;width:100%;box-sizing:border-box;margin:14px 0;padding:10px;font:900 20px system-ui,sans-serif;text-align:center;border:2px solid #18181d;border-radius:8px;background:#fff;color:#18181d;text-transform:uppercase;touch-action:manipulation;-webkit-user-select:text;user-select:text;font-size:20px}
+  #namebox button{width:100%;padding:12px;border:0;border-radius:8px;background:#d8262c;color:#fff;font:900 italic 18px system-ui,sans-serif;touch-action:manipulation}
+</style>
+</head>
+<body>
+<canvas id="game"></canvas>
+<button id="mute" aria-label="Mute">🔊</button>
+<button id="pause" aria-label="Pause">⏸</button>
+<div id="namebox"><div class="card">Name your fighter<input id="nm" maxlength="12" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="YOUR NAME"><button id="nmok">FIGHT</button></div></div>
+<script src="./game.js?v=7"></script>
+</body>
+</html>
